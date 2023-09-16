@@ -1,0 +1,35 @@
+{
+	"name": "themehybrid/hybrid-action-scheduler",
+	"description": "Background processing for the Hybrid Core framework.",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress"
+	],
+	"authors": [
+		{
+			"name": "Theme Hybrid",
+			"email": "themehybrid@gmail.com",
+			"homepage": "https://themehybrid.com",
+			"role": "Developer"
+		}
+	],
+	"homepage": "https://github.com/themehybrid/hybrid-action-scheduler",
+	"support": {
+		"issues": "https://github.com/themehybrid/hybrid-action-scheduler/issues",
+		"forum": "https://themehybrid.com/board/forums/hybrid-core"
+	},
+	"require": {
+		"php": ">=8.0",
+		"woocommerce/action-scheduler": "^3.6"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"Hybrid\\Action\\Scheduler\\": "src/"
+		},
+		"files": [
+			"src/functions-helpers.php"
+		]
+	}
+}
