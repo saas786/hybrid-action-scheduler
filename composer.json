@@ -20,7 +20,7 @@
 	},
 	"require": {
 		"php": ">=8.0",
-		"woocommerce/action-scheduler": "^3.6"
+		"woocommerce/action-scheduler": "^3.8.1"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,
@@ -31,5 +31,8 @@
 		"files": [
 			"src/functions-helpers.php"
 		]
+	},
+	"config": {
+		"sort-packages": true
 	}
 }
