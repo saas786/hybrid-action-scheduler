@@ -19,8 +19,8 @@
 		"forum": "https://themehybrid.com/board/forums/hybrid-core"
 	},
 	"require": {
-		"php": ">=8.0",
-		"woocommerce/action-scheduler": "^3.8.1"
+		"php": ">=8.2",
+		"woocommerce/action-scheduler": "^4.0.0"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable": true,

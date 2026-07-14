@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Queue Interface.
  */
@@ -11,13 +12,13 @@ namespace Hybrid\Action\Scheduler\Contracts;
  * Functions that must be defined to implement an action/job/event queue.
  */
 interface Queue {
-
     /**
      * Enqueue an action to run one time, as soon as possible.
      *
      * @param string $hook The hook to trigger.
      * @param array  $args Arguments to pass when the hook triggers.
      * @param string $group The group to assign this job to.
+     *
      * @return string The action ID
      */
     public function add( $hook, $args = [], $group = '' );
@@ -29,6 +30,7 @@ interface Queue {
      * @param string $hook The hook to trigger.
      * @param array  $args Arguments to pass when the hook triggers.
      * @param string $group The group to assign this job to.
+     *
      * @return string The action ID
      */
     public function schedule_single( $timestamp, $hook, $args = [], $group = '' );
@@ -41,12 +43,21 @@ interface Queue {
      * @param string $hook The hook to trigger.
      * @param array  $args Arguments to pass when the hook triggers.
      * @param string $group The group to assign this job to.
+     *
      * @return string The action ID
      */
     public function schedule_recurring( $timestamp, $interval_in_seconds, $hook, $args = [], $group = '' );
 
     /**
      * Schedule an action that recurs on a cron-like schedule.
+     *
+     * @param int    $timestamp The schedule will start on or after this time.
+     * @param string $cron_schedule A cron-link schedule string.
+     * @param string $hook The hook to trigger.
+     * @param array  $args Arguments to pass when the hook triggers.
+     * @param string $group The group to assign this job to.
+     *
+     * @return string The action ID
      *
      * @see http://en.wikipedia.org/wiki/Cron
      *   *    *    *    *    *    *
@@ -58,12 +69,6 @@ interface Queue {
      *   |    |    +--------------- day of month (1 - 31)
      *   |    +-------------------- hour (0 - 23)
      *   +------------------------- min (0 - 59)
-     * @param int    $timestamp The schedule will start on or after this time.
-     * @param string $cron_schedule A cron-link schedule string.
-     * @param string $hook The hook to trigger.
-     * @param array  $args Arguments to pass when the hook triggers.
-     * @param string $group The group to assign this job to.
-     * @return string The action ID
      */
     public function schedule_cron( $timestamp, $cron_schedule, $hook, $args = [], $group = '' );
 
@@ -94,6 +99,7 @@ interface Queue {
      * @param string $hook The hook that the job will trigger.
      * @param array  $args Filter to a hook with matching args that will be passed to the job when it runs.
      * @param string $group Filter to only actions assigned to a specific group.
+     *
      * @return \ActionScheduler_DateTime|null The date and time for the next occurrence, or null if there is no pending, scheduled action for the given hook
      */
     public function get_next( $hook, $args = null, $group = '' );
@@ -116,8 +122,8 @@ interface Queue {
      *                     'orderby' => 'date' - accepted values are 'hook', 'group', 'modified', or 'date'.
      *                     'order' => 'ASC'.
      * @param string $return_format OBJECT, ARRAY_A, or ids.
+     *
      * @return array
      */
     public function search( $args = [], $return_format = OBJECT );
-
 }
