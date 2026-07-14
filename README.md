@@ -5,7 +5,7 @@ A background processing package for the Hybrid Core framework.
 ## Requirements
 
 * WordPress 6.3.1+.
-* PHP 8.0+ (8.1+ recommended).
+* PHP 8.2+.
 * [Composer](https://getcomposer.org/) for managing PHP dependencies.
 
 ## Note
