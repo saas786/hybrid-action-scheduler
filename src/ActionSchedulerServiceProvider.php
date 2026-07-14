@@ -10,7 +10,7 @@ use Hybrid\Core\ServiceProvider;
 /**
  * Action Scheduler provider class.
  */
-class Provider extends ServiceProvider {
+class ActionSchedulerServiceProvider extends ServiceProvider {
 
     /**
      * Register.
